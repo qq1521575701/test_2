@@ -3,60 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的电子名片</title>
+    <title>电子名片 - 张三</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: "微软雅黑", sans-serif;
-            background-color: #f2f2f2;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #fff;
         }
+
         .card {
-            background-color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px 30px;
             width: 320px;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
         }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
         .avatar {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
-            border: 3px solid #4CAF50;
+            border: 4px solid #fff;
+            transition: transform 0.3s;
         }
+
+        .avatar:hover {
+            transform: rotate(10deg);
+        }
+
         h1 {
-            margin: 0;
-            font-size: 24px;
-            color: #333;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
+
         .info {
-            margin: 15px 0;
             font-size: 16px;
-            color: #555;
+            margin-bottom: 15px;
         }
+
         .info a {
-            color: #4CAF50;
+            color: #ffeb3b;
             text-decoration: none;
+            font-weight: 500;
         }
+
         .wechat {
             margin-top: 20px;
         }
+
         .wechat img {
             width: 150px;
             height: 150px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .wechat img:hover {
+            transform: scale(1.1);
+        }
+
+        /* 手机端自适应 */
+        @media (max-width: 400px) {
+            .card {
+                width: 90%;
+                padding: 30px 20px;
+            }
+            .wechat img {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <!-- 替换你的头像 URL -->
+        <!-- 替换为你的头像 -->
         <img src="avatar.jpg" alt="头像" class="avatar">
-
+        
         <!-- 姓名 -->
         <h1>张三</h1>
 
@@ -68,7 +112,7 @@
         <!-- 微信 -->
         <div class="wechat">
             <p>微信扫码添加我：</p>
-            <!-- 替换你的微信二维码图片 URL -->
+            <!-- 替换为你的微信二维码 -->
             <img src="wechat_qr.png" alt="微信二维码">
         </div>
     </div>

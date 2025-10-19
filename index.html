@@ -3,146 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>李博的电子名片</title>
+<title>李博的专业电子名片</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body,html{height:100%;font-family:'Roboto',sans-serif;overflow:hidden;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body,html{height:100%;font-family:'Roboto',sans-serif;overflow:hidden;}
 
-    /* 背景动态渐变 */
-    body{
-        background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6a00, #ff0080);
-        background-size: 400% 400%;
-        animation: gradientBG 20s ease infinite;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        color:#fff;
-    }
+/* 背景动态渐变 */
+body{
+    background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6a00, #ff0080);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+}
 
-    @keyframes gradientBG{
-        0%{background-position:0% 50%;}
-        50%{background-position:100% 50%;}
-        100%{background-position:0% 50%;}
-    }
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
 
-    #particles{
-        position:absolute;
-        top:0;left:0;
-        width:100%;height:100%;
-        z-index:0;
-        pointer-events:none;
-    }
+#particles{
+    position:absolute;
+    top:0;left:0;
+    width:100%;height:100%;
+    z-index:0;
+    pointer-events:none;
+}
 
-    /* 卡片样式 */
-    .card{
-        position:relative;
-        z-index:1;
-        background: rgba(255,255,255,0.1);
-        backdrop-filter: blur(25px);
-        border-radius: 25px;
-        padding: 50px 35px;
-        width: 350px;
-        text-align:center;
-        box-shadow:0 15px 40px rgba(0,0,0,0.5);
-        transition: transform 0.5s, box-shadow 0.5s;
-        cursor: pointer;
-        opacity:0;
-        transform: translateY(30px);
-        animation: fadeIn 1s forwards;
-        animation-delay: 0.5s;
-    }
+/* 卡片样式 */
+.card{
+    position:relative;
+    z-index:1;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(25px);
+    border-radius: 25px;
+    padding: 50px 35px;
+    width: 360px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.5);
+    transition: transform 0.5s, box-shadow 0.5s;
+    cursor: pointer;
+    opacity:0;
+    transform: translateY(30px);
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.5s;
+}
 
-    @keyframes fadeIn{
-        to {opacity:1; transform: translateY(0);}
-    }
+@keyframes fadeIn{
+    to {opacity:1; transform: translateY(0);}
+}
 
-    .card:hover{
-        transform: translateY(-10px) scale(1.05);
-        box-shadow:0 25px 50px rgba(0,0,0,0.7);
-    }
+.card:hover{
+    transform: translateY(-10px) scale(1.05);
+    box-shadow:0 25px 50px rgba(0,0,0,0.7);
+}
 
-    /* 头像 */
-    .avatar{
-        width: 130px;
-        height: 130px;
-        border-radius:50%;
-        object-fit:cover;
-        margin-bottom:25px;
-        border:4px solid #fff;
-        transition: transform 0.5s, box-shadow 0.5s;
-    }
-    .avatar:hover{
-        transform: rotate(15deg) scale(1.1);
-        box-shadow:0 0 25px rgba(255,255,255,0.6);
-    }
+/* 头像 */
+.avatar{
+    width: 120px;
+    height: 120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:20px;
+    border:4px solid #fff;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+.avatar:hover{
+    transform: rotate(10deg) scale(1.05);
+    box-shadow:0 0 20px rgba(255,255,255,0.6);
+}
 
-    h1{
-        font-size:28px;
-        font-weight:700;
-        margin-bottom:15px;
-        text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
-    }
+h1{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:10px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
 
-    .info{
-        font-size:17px;
-        margin-bottom:15px;
-        color:#fff;
-    }
-    .info a{
-        color:#ffeb3b;
-        text-decoration:none;
-        font-weight:500;
-    }
+/* 个人介绍 */
+.bio{
+    font-size:15px;
+    margin:10px 0 20px 0;
+    color:#e0e0e0;
+    line-height:1.5;
+}
 
-    /* 微信二维码 */
-    .wechat{
-        margin-top:25px;
-        position: relative;
-    }
-    .wechat img{
-        width:160px;
-        height:160px;
-        border-radius:15px;
-        transition: transform 0.4s, box-shadow 0.4s;
-        cursor:pointer;
-        box-shadow:0 0 20px rgba(0,0,0,0.5);
-    }
-    .wechat img:hover{
-        transform: scale(1.1);
-    }
+/* 联系方式 */
+.info{
+    font-size:16px;
+    margin-bottom:15px;
+    color:#fff;
+}
+.info a{
+    color:#ffeb3b;
+    text-decoration:none;
+    font-weight:500;
+}
 
-    /* 弹出层 */
-    .overlay{
-        position:fixed;
-        top:0;left:0;
-        width:100%;height:100%;
-        background:rgba(0,0,0,0.85);
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        opacity:0;
-        pointer-events:none;
-        transition:opacity 0.3s;
-        z-index:10;
-    }
-    .overlay.active{
-        opacity:1;
-        pointer-events:auto;
-    }
-    .overlay img{
-        max-width:80%;
-        max-height:80%;
-        border-radius:15px;
-        box-shadow:0 0 40px rgba(255,255,255,0.7);
-    }
+/* 微信二维码 */
+.wechat{
+    margin-top:20px;
+    position: relative;
+}
+.wechat img{
+    width:120px;   /* 调整为适中尺寸 */
+    height:120px;
+    border-radius:15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+.wechat img:hover{
+    transform: scale(1.1);
+}
 
-    /* 手机端自适应 */
-    @media(max-width:400px){
-        .card{width:90%;padding:30px 20px;}
-        .wechat img{width:130px;height:130px;}
-        .avatar{width:110px;height:110px;}
-    }
+/* 弹出层 */
+.overlay{
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.85);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 0.3s;
+    z-index:10;
+}
+.overlay.active{
+    opacity:1;
+    pointer-events:auto;
+}
+.overlay img{
+    max-width:70%;  /* 弹出图片不占太大屏幕 */
+    max-height:70%;
+    border-radius:15px;
+    box-shadow:0 0 40px rgba(255,255,255,0.7);
+}
+
+/* 手机端自适应 */
+@media(max-width:400px){
+    .card{width:90%;padding:30px 20px;}
+    .wechat img{width:100px;height:100px;}
+    .avatar{width:100px;height:100px;}
+}
 </style>
 </head>
 <body>
@@ -152,6 +161,10 @@
 <div class="card">
     <img src="avatar.jpg" alt="头像" class="avatar" id="avatar">
     <h1>李博</h1>
+    <div class="bio">
+        专业快递服务员，专注于快速、高效、安全的快递配送。  
+        欢迎联系我获取服务信息。
+    </div>
     <div class="info">电话：<a href="tel:17373722171">17373722171</a></div>
     <div class="wechat">
         <p>微信扫码添加我：</p>
@@ -164,7 +177,7 @@
 </div>
 
 <script>
-    // 弹出头像/微信二维码大图
+    // 弹出头像/二维码大图
     const overlay = document.getElementById('overlay');
     const overlayImg = document.getElementById('overlayImg');
     const avatar = document.getElementById('avatar');
@@ -183,7 +196,7 @@
     }
 
     function copyWechat(){
-        const wechatID = "李博"; // 可替换成你的微信号
+        const wechatID = "李博"; 
         navigator.clipboard.writeText(wechatID).then(()=>{
             alert("微信号已复制: " + wechatID);
         });
@@ -206,9 +219,9 @@
         constructor(){
             this.x=Math.random()*canvas.width;
             this.y=Math.random()*canvas.height;
-            this.size=Math.random()*3+1;
-            this.speedX=(Math.random()-0.5)*1.5;
-            this.speedY=(Math.random()-0.5)*1.5;
+            this.size=Math.random()*2+1;
+            this.speedX=(Math.random()-0.5)*1.2;
+            this.speedY=(Math.random()-0.5)*1.2;
         }
         update(){
             this.x+=this.speedX;
@@ -226,7 +239,7 @@
 
     function initParticles(){
         particlesArray=[];
-        for(let i=0;i<120;i++){
+        for(let i=0;i<100;i++){
             particlesArray.push(new Particle());
         }
     }
